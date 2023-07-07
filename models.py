@@ -47,9 +47,6 @@ def adams_bashforth_3(f, T, U0):
 
     for i in range(3, len(T)):
         U[i] = U[i - 1]
-        # U[i] += (h / 12) * (
-        #             23 * f(T[i-3] - h, U[i-1]) - 16 * f(T[i-3] - 2 * h, U[i-2]) + 5 * f(T[i-3] - 3 * h,
-        #                                                                                         U[i-3]))
         U[i] += (h / 12) * (
                 23 * f(T[i - 1] - h, U[i - 1]) - 16 * f(T[i - 2] - 2 * h, U[i - 2]) + 5 * f(T[i - 3] - 3 * h,
                                                                                             U[i - 3]))
